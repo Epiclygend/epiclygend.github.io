@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="body-not-full-width">
+<head>
+	<title>EpiclyCSS Documentation</title>
+	<meta name="viewport"content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="Epic-CSS-1.0.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<!-- https://fonts.google.com/?selection.family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700 -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	<nav class="primary_dark">
+		<div class="container __fills">
+			<div>
+				<a href="#" class="m-r2"><i class="material-icons primary_dark">menu</i></a>Epic CSS Documentation
+			</div>
+		</div>
+	</nav>
+	<main>
+		<section data-secname="Guide to Use this Documentation">
+			<p>You can normally Styling your Element with CSS we've served by Giving Class to that's Element</p>
+			<p><b>But</b> you can Styling your CSS using Variable we've Served Flexibly</p>
+		</section>
+		<section data-secname="Color Theming">
+			<div class="container">
+				<div class="card hoverable"><h6>Primary Background</h6></div>
+				<div class="card" style="background-color: var(--primary-content); color: var(--primary-bg);"><h6>Primary Content</h6></div>
+				<div class="card primary_light"><h6>Primary Light</h6></div>
+				<div class="card primary_dark"><h6>Primary Dark</h6></div>
+			</div>
+			<div class="container">
+				<div class="card secondary"><h6>Secondary Background</h6></div>
+				<div class="card" style="background-color: var(--secondary-content);"><h6>Secondary Content</h6></div>
+				<div class="card secondary_light"><h6>Secondary Light</h6></div>
+				<div class="card secondary_dark"><h6>Secondary Dark</h6></div>
+			</div>
+			<div class="container">
+				<div class="card tertiary"><h6>Tertiary Background</h6></div>
+				<div class="card" style="background-color: var(--tertiary-content);"><h6>Tertiary Content</h6></div>
+				<div class="card tertiary_light"><h6>Tertiary Light</h6></div>
+				<div class="card tertiary_dark"><h6>Tertiary Dark</h6></div>
+			</div>
+			<div class="container">
+				<div class="card quartenary"><h6>Quartenary Background</h6></div>
+				<div class="card" style="background-color: var(--quartenary-content); color: var(--primary-bg);"><h6>Quartenary Content</h6></div>
+				<div class="card quartenary_light"><h6>Quartenary Light</h6></div>
+				<div class="card quartenary_dark"><h6>Quartenary Dark</h6></div>
+			</div>
+		</section>
+		<section data-secname="Grid Systems">
+			<div class="container __col">
+				<div class="container">
+					<div class="card">Child</div><div class="card">Child</div><div class="card">Child</div><div class="card">Child</div><div class="card">Child</div><div class="card">Child</div><div class="card">Child</div>
+				</div>
+				<div class="code">
+					<div class="row">&lt;div class="container">...&lt;/div></div>
+				</div>
+				<p class="note"><i>By Default if you not define the container, childs will be aligned as row</i></p>
+				<p>To make Vertical Align, Just add <i>__col</i> class</p>
+				<div class="code">
+					<div class="row">&lt;div class="container __col">...&lt;/div></div>
+				</div>
+				<h5>The Example below shows the align according to the Main Axis</h5>
+				<div class="container">
+					<div class="container __col card secondary">
+						<h4>Default</h4>
+						<div class="container __col secondary_light shadow" style="height: calc(80vh - 2.8rem);"><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div></div>
+					</div>
+					<div class="container __col card secondary">
+						<h4>__Start</h4>
+						<div class="container __col __start secondary_light shadow" style="height: calc(80vh - 2.8rem);"><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div></div>
+					</div>
+					<div class="container __col card secondary">
+						<h4>__End</h4>
+						<div class="container __col __end secondary_light shadow" style="height: calc(80vh - 2.8rem);"><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div></div>
+					</div>
+					<div class="container __col card secondary">
+						<h4>__Fills</h4>
+						<div class="container __col __fills secondary_light shadow" style="height: calc(80vh - 2.8rem);"><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div><div class="card __blank primary shadow d2"></div></div>
+					</div>
+				</div>
+				<div class="code">
+					<div class="row">&lt;div class="container">...&lt;/div></div>
+					<div class="row">&lt;div class="container __start">...&lt;/div></div>
+					<div class="row">&lt;div class="container __end">...&lt;/div></div>
+					<div class="row">&lt;div class="container __fills">...&lt;/div></div>
+				</div>
+				<h5>The Example below shows the align according to the Perpendicular Main Axis</h5>
+				<div class="container __col">
+					<div class="container">
+						<div class="container __col card secondary">
+							<h4>Default</h4>
+							<div class="container secondary_light shadow" style="height: calc(30vh - 2.8rem);"><div class="card primary shadow d2">Hi, i'm the true</div><div class="card primary shadow d2">Hi, i'm the true</div><div class="card __Pcenter primary shadow d2">Hi, i was Aligned to Center</div></div>
+						</div>
+						<div class="container __col card secondary">
+							<h4>__Pcenter</h4>
+							<div class="container __Pcenter secondary_light shadow" style="height: calc(30vh - 2.8rem);"><div class="card primary shadow d2">Hi, i'm the true</div><div class="card __Pfills primary shadow d2">Hi, i'm was Aligned to Strecth</div><div class="card primary shadow d2">Hi, i'm the true</div></div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="container __col card secondary">
+							<h4>__Pend</h4>
+							<div class="container __Pend secondary_light shadow" style="height: calc(30vh - 2.8rem);"><div class="card __Pstart primary shadow d2">Hi, i was Aligned to the First</div><div class="card primary shadow d2">Hi, i'm the true</div><div class="card primary shadow d2">Hi, i'm the true</div></div>
+						</div>
+						<div class="container __col card secondary">
+							<h4>__Pstart</h4>
+							<div class="container __Pstart secondary_light shadow" style="height: calc(30vh - 2.8rem);"><div class="card primary shadow d2">Hi, i'm the true</div><div class="card __Pend primary shadow d2">Hi, i was Aligned to the First</div><div class="card primary shadow d2">Hi, i'm the true</div></div>
+						</div>
+					</div>
+				</div>
+				<div class="code">
+					<div class="row">&lt;div class="container">...&lt;/div></div>
+					<div class="row">&lt;div class="container __Pstart">...&lt;/div></div>
+					<div class="row">&lt;div class="container __Pend">...&lt;/div></div>
+					<div class="row">&lt;div class="container __Pcenter">...&lt;/div></div>
+				</div>
+				<span class="note">But you can make one of them or more to Aligned to Different align than others</span>
+				<div class="code">
+					<div class="row">&lt;div class="container"></div>
+					<div class="row">&ensp;&ensp;&lt;div class="__pstart">...Child...&lt;/div></div>
+					<div class="row">&lt;/div></div>
+					<div class="row">&lt;div class="container"></div>
+					<div class="row">&ensp;&ensp;div class="__Pend">...Child...&lt;/div></div>
+					<div class="row">&lt;/div></div>
+					<div class="row">&lt;div class="container"></div>
+					<div class="row">&ensp;&ensp;div class="__Pcenter">...Child...&lt;/div></div>
+					<div class="row">&lt;/div></div>
+					<div class="row">&lt;div class="container"></div>
+					<div class="row">&ensp;&ensp;div class="__Pfills">...Child...&lt;/div></div>
+					<div class="row">&lt;/div></div>
+				</div>
+			</div>
+		</section>
+		<section data-secname="Margin and Padding">
+			<div class="container __col">
+				<h2 class="left-bordered">Margin</h2>
+				<div class="container">
+					<div class="card quartenary"><h6>m1</h6><div class="card m1 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m2</h6><div class="card m2 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m3</h6><div class="card m3 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m4</h6><div class="card m4 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m5</h6><div class="card m5 tertiary">content</div></div>
+				</div>
+				<div class="container">
+					<div class="card quartenary"><h6>m-t3</h6><div class="card m-t3 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m-r3</h6><div class="card m-r3 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m-b3</h6><div class="card m-b3 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m-l3</h6><div class="card m-l3 tertiary">content</div></div>
+					<div class="card quartenary"><h6>m-t3 m-r3</h6><div class="card m-t3 m-r3 tertiary">content</div></div>
+				</div>
+
+				<h2 class="left-bordered">Padding</h2>
+				<div class="container">
+					<div class="card p1 quartenary"><h6>p1</h6></div>
+					<div class="card p2 quartenary"><h6>p2</h6></div>
+					<div class="card p3 quartenary"><h6>p3</h6></div>
+					<div class="card p4 quartenary"><h6>p4</h6></div>
+					<div class="card p5 quartenary"><h6>p5</h6></div>
+				</div>
+				<div class="container">
+					<div class="card p-t3 quartenary"><h6>p-t3</h6></div>
+					<div class="card p-r3 quartenary"><h6>p-r3</h6></div>
+					<div class="card p-b3 quartenary"><h6>p-b3</h6></div>
+					<div class="card p-l3 quartenary"><h6>p-l3</h6></div>
+					<div class="card p-t3 p-r3 quartenary"><h6>p-t3 p-r3</h6></div>
+				</div>
+			</div>
+		</section>
+		<section data-secname="Shadow Systems">
+			<div class="container">
+				<div class="card shadow"><b>Default Shadow</b></div>
+				<div class="card shadow d1"><b>Depth 1</b></div>
+				<div class="card shadow d2"><b>Depth 2</b></div>
+				<div class="card shadow d3"><b>Depth 2</b></div>
+				<div class="card shadow d4"><b>Depth 3</b></div>
+			</div>
+			<p>You can copy this shadow to your CSS by using variables</p>
+			<p><b>Shadow + Depth Num</b></p>
+			<div class="container __col">
+				<h3 class="left-bordered">Class Code</h3>
+				<div class="code">
+					<div class="row">&lt;div class="shadow">...&lt;/div></div>
+					<div class="row">&lt;div class="shadow d1">...&lt;/div></div>
+					<div class="row">...</div>
+				</div>
+				<h3 class="left-bordered">Styling with CSS Code</h3>
+				<div class="code">
+					<div class="row">[element selector] {</div>
+					<div class="row">&ensp;&ensp;box-shadow: var(--shadow-d);</div>
+					<div class="row">}</div>
+					<div class="row">[element selector] {</div>
+					<div class="row">&ensp;&ensp;box-shadow: var(--shadow-d1);</div>
+					<div class="row">}</div>
+					<div class="row">...</div>
+				</div>
+			</div>
+		</section>
+		<section data-secname="Typography">
+			<div class="container __col">
+				<h1>Heading 1</h1>
+				<h2>Heading 2</h2>
+				<h3>Heading 3</h3>
+				<h4>Heading 4</h4>
+				<h5>Heading 5</h5>
+				<h6>Heading 6</h6>
+				<h1 class="left-bordered">Heading with Left Border</h1>
+				<div class="code">
+					<div class="row">&lt;h1 class="left-bordered">...&lt;/h1></div>
+				</div>
+				<span class="note">Not only Heading, you can add Left Border to any elements</span>
+				<h3 class="left-bordered">Paragraph</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<div class="code">
+					<div class="row">&lt;p>...&lt;/p></div>
+				</div>
+				<h3 class="left-bordered">Note</h3>
+				<span class="note">The Quick Brown Fox Jumps Over The Lazy Dog</span>
+				<div class="code">
+					<div class="row">&lt;span class="note">...&lt;/span></div>
+				</div>
+				<span>Add <i>Note</i> Class to add this Style</span>
+			</div>
+		</section>
+		<section data-secname="Table Layout">
+			<div class="card __Pfills">
+				<table class="editable">
+					<caption>Example</caption>
+					<thead>
+						<tr>
+							<th>Foo</th><th>Bar</th><th>Baz</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+						</tr>
+						<tr>
+							<td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+						</tr>
+						<tr>
+							<td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>Sum</td><td>Count</td><td>Avg</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<div class="code">
+				<div class="row">&lt;table></div>
+					<div class="row">&ensp;&ensp;&lt;caption>Table Caption&lt;/caption></div>
+					<div class="row">&ensp;&ensp;&lt;thead></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;tr></div>
+							<div class="row">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;th>Heading&lt;/th>&lt;th>Heading&lt;/th>&lt;th>Heading&lt;/th></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;/tr></div>
+					<div class="row">&ensp;&ensp;&lt;/thead></div>
+					<div class="row">&ensp;&ensp;&lt;tbody></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;tr></div>
+							<div class="row">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;td>Row Content&lt;/td>&lt;td>Row Content&lt;/td>&lt;td>Row Content&lt;/td></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;/tr></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;tr></div>
+							<div class="row">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;td>Row Content&lt;/td>&lt;td>Row Content&lt;/td>&lt;td>Row Content&lt;/td></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;/tr></div>
+					<div class="row">&ensp;&ensp;&lt;/tbody></div>
+					<div class="row">&ensp;&ensp;&lt;tfoot></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;tr></div>
+							<div class="row">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;td>Footer Content&lt;/td>&lt;td>Footer Content&lt;/td>&lt;td>Footer Content&lt;/td></div>
+						<div class="row">&ensp;&ensp;&ensp;&ensp;&lt;/tr></div>
+					<div class="row">&ensp;&ensp;&lt;/tfoot></div>
+				<div class="row">&lt;/table></div>
+			</div>
+		</section>
+		<section data-secname="Tooltip">
+			<a class="btn shadow d1" data-tooltip="Lorem Ipsum"><h5>This is  Tooltipped</h5></a>
+			<p>Simple, just give the Element <i>'data-tooltip'</i> attribute. <b>the Value is the Tooltip text</b></p>
+			<div class="code">
+				<div class="row">&lt;div data-tooltip='[value]'>Lorem Ipsum&lt;div></div>
+			</div>
+			<p><b>Not just div</b>, you can add Tooltip to many Elements, like the Element Above</p>
+		</section>
+		<section data-secname="Z-Indexing">
+			<h3>NAV = 2</h3>
+			<h3>TOOLTIP = 99</h3>
+		</section>
+		<ul class="tblEdit-dialog">
+			<li>Edit</li>
+			<li>Remove</li>
+		</ul>
+	</main>
+</body>
+<script type="text/javascript" src="Epic-JS-1.0.js"></script>
+<script>
+	var tbl = new tblEdit(document.querySelector('table'));
+	(function () {
+		toolTips();
+	})();
+</script>
+</html>

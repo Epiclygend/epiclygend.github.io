@@ -1,0 +1,630 @@
+/*EPIC CSS*/
+/*EPICLYGEND CSS*/
+/*FROM EPICLYGEND CREATIVE CENTER*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+/*VISIT OUR WEBSITE === epiclygend.com ====*/
+:root {
+	/*COLOR VARIABLE*/
+		/*COLOR BY MATERIAL.IO*/
+		--primary-bg: #FFF;
+		--primary-content: rgba(0,0,0,.8);
+		--primary-light: #484848;
+		--primary-dark: #000;
+		--secondary-bg: #304ffe;
+		--secondary-content: #FFF;
+		--secondary-light: #7a7cff;
+		--secondary-dark: #0026ca;
+		--tertiary-bg: #ff1744;
+		--tertiary-content: #fff;
+		--tertiary-light: #ff616f;
+		--tertiary-dark: #c4001d;
+		--quartenary-bg: #00e676;
+		--quartenary-content: #fff;
+		--quartenary-light: #66ffa6;
+		--quartenary-dark: #00b248;
+		--current-bg-color: var(--primary-bg);
+		--current-content-color: var(--primary-content);
+		--current-light-color: var(--primary-light);
+		--current-dark-color: var(--primary-dark);
+		color: var(--current-content-color);
+		--dark-mode-bg: rgba(0,0,0,.9);
+		--dark-mode-color: rgba(255,255,255,.95);
+	/*SHADOW VAR*/
+		--shadow-d: 0 0 1.5px 1px rgba(0,0,0,.1), 0 1.5px 3px 1px rgba(0,0,0,.2);
+		--shadow-d1: 0 0 1.5px 1px rgba(0,0,0,.1), 0 3.5px 5px 2px rgba(0,0,0,.2);
+		--shadow-d2: 0 0 1.5px 1px rgba(0,0,0,.1), 0 4.5px 7.5px 4px rgba(0,0,0,.2);
+		--shadow-d3: ;
+		--shadow-d4: ;
+		--shadow-dh: 0 0 2px 1px rgba(0,0,0,.1), 0 3px 5px 2px rgba(0,0,0,.2);
+		--shadow-dh1: 0 0 2px 1px rgba(0,0,0,.1), 0 10px 13px 2px rgba(0,0,0,.2);
+		--shadow-dh2: 0 0 3px 0.5px rgba(0,0,0,.1), 0 10px 14px 4px rgba(0,0,0,0.2);
+		--shadow-dh3: ;
+		--shadow-dh4: ;
+}
+* { box-sizing: border-box; font-family: "Roboto", sans-serif; transition: all .2s ease; }
+a { text-decoration: none; }
+*.default { all: unset; }
+body {
+	position: relative;
+	margin-top: 0;
+	margin-bottom: 10px;
+	margin-left: 0;
+	margin-right: 0;
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background-color: var(--current-bg-color);
+}
+body:after {
+	content: "Copyright\00A9 2018 Epiclygend | Copyright reserved";
+	position: absolute;
+	top: 100%;
+	left: 0;
+	box-sizing: border-box;
+	width: 100%;
+	max-height: 10vh;
+	padding: 15px 0;
+	font-size: 1rem;
+	vertical-align: middle;
+	text-align: center;
+	color: rgb(240,240,240);
+	box-shadow: 0 0 5px rgb(50,50,50);
+	background-color: rgb(41,128,185);
+}
+/*================= default Epic CSS Device Resolution 1366 x 768px =================*/
+/*================= default Epic CSS Device Resolution 1366 x 768px =================*/
+/*================= default Epic CSS Device Resolution 1366 x 768px =================*/
+/*================== AUDIO ====================*/
+	audio {}
+/*================== DETAILS ( like dropdown ) ====================*/
+
+/*================== TYPOGRAPHY ====================*/
+	/*BLOCKQUOTE*/
+		blockquote { font-size: 25px; font-style: italic; }
+		blockquote:before { content: "\""; font-size: 35px; }
+		blockquote:after { content: "\""; font-size: 35px; }
+	/* HEADING */
+		h1 {
+			margin-block-start: .5em;
+			margin-block-end: .4em;
+			font-size: 3rem;
+			font-weight: 500;
+			color: var(--current-content-color);
+		}
+		h2 {
+			margin-block-start: .5em;
+			margin-block-end: .4em;
+			font-size: 2.5rem;
+			font-weight: 500;
+			color: var(--current-content-color);
+		}
+		h3 {
+			margin-block-start: .5em;
+			margin-block-end: .4em;
+			font-size: 2.1rem;
+			font-weight: 500;
+			color: var(--current-content-color);
+		}
+		h4 {
+			margin-block-start: .5em;
+			margin-block-end: .4em;
+			font-size: 1.9rem;
+			font-weight: 500;
+			color: var(--current-content-color);
+		}
+		h5 {
+			margin-block-start: .5em;
+			margin-block-end: .4em;
+			font-size: 1.6rem;
+			font-weight: 500;
+			color: var(--current-content-color);
+		}
+		h6 {
+			margin-block-start: .5em;
+			margin-block-end: .4em;
+			font-size: 1.4rem;
+			font-weight: 500;
+			color: var(--current-content-color);
+		}
+	/* PARAGRAPH */
+	p {
+		margin: .5em 0;
+		line-height: 1.4rem;
+		text-indent: 2em;
+		font-size: 1rem;
+		color: var(--current-content-color);
+	}
+	span {
+		margin: .3em;
+		color: var(--current-content-color);
+	}
+	q {}
+	/* FONT STYLE */
+	i {
+		color: var(--current-content-color);
+	}
+
+/*================== DESCRIPTION LIST ====================*/
+	dl {}
+	dt {}
+	dd {}
+
+/*================== FORM ====================*/
+	form {}
+	fieldset {}
+	input[type="button"], input[type="color"], input[type="file"] {}
+	input[type="text"], input[type="number"], input[type="email"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="password"], input[type="reset"], input[type="search"], input[type="time"], input[type="url"] {}
+	input[type="checkbox"], input[type="radio"] {}
+	input[type="range"] {}
+	label {}
+	textarea {}
+
+/*================== HTML STRUCTURE ====================*/
+	header {}
+	nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		padding: 10px;
+		width: 100vw;
+		font-size: 1.3rem;
+		display: flex;
+		background-color: var(--current-bg-color);
+		color: var(--current-content-color);
+		box-shadow: var(--shadow-dh1);	
+	}
+	main {}
+	article {}
+	section {
+		position: relative;
+		margin: 10px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: var(--current-content-color);
+		background-color: var(--current-bg-color);
+		box-shadow: var(--shadow-d1);
+		border-radius: 5px;
+	}
+	section:hover {
+		box-shadow: var(--shadow-dh1);
+	}
+	footer {}
+img {}
+
+/*================== LIST ====================*/
+	ul {}
+	ul li {}
+	ol {}
+	ol li {}
+progress, meter {}
+
+/*================== SELECT DROPDOWN ====================*/
+	select {}
+	option {}
+
+/*================== TABLE ====================*/
+	table {
+		margin: .5rem 1rem 2rem;
+		overflow: auto;
+		width: 100%;
+		border-collapse: collapse;
+	}
+	caption {
+		margin: .5rem 1rem .3em;
+		width: fit-content;
+		width: -moz-fit-content;
+		padding: .8rem 1.2rem .5rem;
+		font-size: 1.2rem;
+		font-weight: 500;
+		border-bottom: 4px solid var(--current-dark-color);
+	}
+	thead {
+		border-bottom: 3px solid rgba(0,0,0,.2);
+	}
+	tbody{
+		overflow: auto;
+	}
+	tfoot {
+		background-color: rgba(0,0,0,.05);
+		border-top: 3px solid rgba(0,0,0,.2);
+	}
+	table > *:first-child > tr:first-child {
+		border-top-right-radius: 12.5px;
+		border-top-left-radius: 12.5px;
+	}
+	table > *:first-child > tr:first-child td:first-child {
+		border-top-left-radius: 12.5px;
+		padding-left: 1.5rem;
+	}
+	table > *:first-child > tr:first-child td:last-child {
+		border-top-right-radius: 12.5px;
+		padding-right: 1.5rem;
+	}
+	table > *:last-child > tr:last-child {
+		border-bottom-right-radius: 12.5px;
+		border-bottom-left-radius: 12.5px;
+	}
+	table > *:last-child > tr:last-child td:first-child {
+		border-bottom-left-radius: 12.5px;
+		padding-left: 1.5rem;
+	}
+	table > *:last-child > tr:last-child td:last-child {
+		border-bottom-right-radius: 12.5px;
+		padding-right: 1.5rem;
+	}
+	tr {
+		background-color: var(--primary-bg);
+		color: var(--primary-content);
+	}
+	tfoot tr:hover,
+	tbody tr:hover {
+		background-color: rgba(0,0,0,.1);
+	}
+	th {
+		padding: 1rem;
+	}
+	td {
+		padding: 1rem;
+	}
+	col {}
+	colgroup {}
+
+/*MAIN CUSTOM*/
+	/*GRID*/
+		div.container {
+			width: 100%;
+			padding: .5rem;
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+		}
+		div.container.__col {
+			flex-direction: column;
+		}
+		div.container.__start {
+			justify-content: flex-start;
+		}
+		div.container.__end {
+			justify-content: flex-end;
+		}
+		div.container.__fills {
+			justify-content: space-between;
+		}
+		div.container.__Pstart {
+			align-items: flex-start;
+		}
+		div.container.__Pend {
+			align-items: flex-end; 
+		}
+		div.container.__Pcenter {
+			align-items: center;
+		}
+		.__Pcenter {
+			align-self: center;
+		}
+		.__Pstart {
+			align-self: flex-start;
+		}
+		.__Pend {
+			align-self: flex-end;
+		}
+		.__Pfills {
+			align-self: stretch;
+		}
+	/*COLOR*/
+		.primary {
+			--current-bg-color: var(--primary-bg);
+			--current-content-color: var(--primary-content);
+			--current-light-color: var(--primary-light);
+			--current-dark-color: var(--primary-dark);
+		}
+		.primary_light {
+			--current-bg-color: var(--primary-light);
+			--current-content-color: var(--primary-bg);
+		}
+		.primary_dark {
+			--current-bg-color: var(--primary-dark);
+			--current-content-color: var(--primary-bg);
+		}
+		.secondary {
+			--current-bg-color: var(--secondary-bg);
+			--current-content-color: var(--secondary-content);
+			--current-light-color: var(--secondary-light);
+			--current-dark-color: var(--secondary-dark);
+		}
+		.secondary_light {
+			--current-bg-color: var(--secondary-light);
+			--current-content-color: var(--secondary-content);
+		}
+		.secondary_dark {
+			--current-dark-color: var(--secondary-dark);
+		}
+		.tertiary {
+			--current-bg-color: var(--tertiary-bg);
+			--current-content-color: var(--tertiary-content);
+			--current-light-color: var(--tertiary-light);
+			--current-dark-color: var(--tertiary-dark);
+		}
+		.tertiary_light {
+			--current-bg-color: var(--tertiary-light);
+			--current-content-color: var(--tertiary-content);
+		}
+		.tertiary_dark {
+			--current-dark-color: var(--tertiary-dark);
+		}
+		.quartenary {
+			--current-bg-color: var(--quartenary-bg);
+			--current-content-color: var(--quartenary-content);
+			--current-light-color: var(--quartenary-light);
+			--current-dark-color: var(--quartenary-dark);
+		}
+		.quartenary_light {
+			--current-bg-color: var(--quartenary-light);
+			--current-content-color: var(--quartenary-content);
+		}
+		.quartenary_dark {
+			--current-bg-color: var(--quartenary-dark);
+			--current-content-color: var(--quartenary-content);
+		}
+	/*SHADOW*/
+		.shadow.d1 { box-shadow: var(--shadow-d1); }
+		.shadow.d1:hover { box-shadow: var(--shadow-dh1); }
+		.shadow.d2 { box-shadow: var(--shadow-d2); }
+		.shadow.d2:hover { box-shadow: var(--shadow-dh2); }
+		.shadow.d3 { box-shadow: var(--shadow-d3); }
+		.shadow.d3:hover { box-shadow: var(--shadow-dh3); }
+		.shadow.d4 { box-shadow: var(--shadow-d4); }
+		.shadow.d4:hover { box-shadow: var(--shadow-dh4); }
+	/*CARDS*/
+		div.card {
+			margin: 10px;
+			min-height: 1.2rem;
+			min-width: 1vw;
+			padding: 15px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: var(--current-content-color);
+			background-color: var(--current-bg-color);
+			border-radius: 5px;
+			box-shadow: var(--shadow-d);
+		}
+		div.card:hover {
+			box-shadow: var(--shadow-dh);
+		}
+		div.card.__blank {
+			width: 6vw;
+			height: 15vh;
+		}
+	/*BODY STYLE*/
+		html.body-not-full-width {
+			background-color: var(--current-light-color);
+		}
+		html.body-not-full-width body {
+			overflow-x: hidden;
+			margin: auto;
+			width: 70vw;
+			padding: 20vh 2vw;
+			box-shadow: var(--shadow-dh2);
+		}
+		html.body-not-full-width body nav {
+			left: -15vw;
+			background-color: var(--current-bg-color);
+			color: var(--current-content-color);
+		}
+	/*TYPOGRAPHY*/
+		.note {
+			font-style: italic;
+			color: red;
+		}
+		.note:before { content: "* "; }
+		.left-bordered {
+			border-left: 6px solid var(--secondary-light);
+			padding-left: .5em;
+			padding-top: .15em;
+			padding-bottom: .1em;
+		}
+		.right-bordered {
+			border-right: 6px solid var(--secondary-light);
+			padding-right: .5em;
+			padding-top: .15em;
+			padding-bottom: .1em;
+		}
+	/*BUTTON*/
+		.btn {
+			position: relative;
+			margin: 4px;
+			border: none;
+			padding: 14px 15px;
+			color: var(--secondary-content);
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: small;
+			font-family: 'Roboto' , sans-serif;
+			font-weight: 500;
+			background-color: var(--secondary-bg);
+			border-radius: 5px;
+			box-shadow: var(--shadow-d);
+		}
+		.btn::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,.15);
+			clip-path: circle(0%);
+			transition: clip-path .2s cubic-bezier(0.5,-1,1,.5);
+			will-change: clip-path;
+		}
+		.btn:hover {
+			/*background-color: var(--p-color-500);*/
+			box-shadow: var(--shadow-dh);
+		}
+		.btn:active::before {
+			clip-path: circle(100%);
+		}
+		.btn.outline {
+			color: var(--secondary-dark);
+			background-color: var(--secondary-content);
+			border: 1.5px solid var(--secondary-dark);
+		}
+		.btn.outline:hover {
+			/*background-color: rgba(0,0,0,.1);*/
+		}
+		.btn.flat {
+			color: var(--current-content-color);
+			background-color: transparent;
+			box-shadow: unset;
+		}
+	/*SECTION*/
+		section[data-secname] {
+			padding-top: calc(40px + 2.5rem);
+		}
+		section[data-secname]:before {
+			content: attr(data-secname);
+			position: absolute;
+			top: 10px;
+			left: 40px;
+			padding: 10px 15px;
+			line-height: 2rem;
+			font-size: 2rem;
+			text-transform: capitalize;
+			color: var(--current-content-color);
+			border-bottom: 3px solid var(--current-light-color);
+		}
+		section.secname-r[data-secname]:before {
+			right: 80px;
+			left: unset;
+		}
+	/*TOOLTIPS*/
+		div.tooltip {
+			position: fixed;
+			display: none;
+			z-index: 99;
+			line-height: 1.2rem;
+			padding: .7rem 1rem;
+			font-size: .9rem;
+			color: var(--dark-mode-color);
+			background-color: var(--dark-mode-bg);
+			border-radius: 3px;
+			box-shadow: var(--shadow-d4);
+		}
+	/*TABLE*/
+		/*EDITABLE TABLE*/
+			table.editable {
+
+			}
+			/*DIALOG BOX*/
+			ul.tblEdit-dialog {
+				position: fixed;
+				display: none;
+				z-index: 98;
+				top: 0;
+				left: 0;
+				margin: 0;
+				padding: .7rem 0;
+				list-style: none;
+				background-color: var(--dark-mode-color);
+				border-radius: 6px;
+				box-shadow: 0 3px 10px 3px rgba(0,0,0,0.4)
+			}
+			ul.tblEdit-dialog li {
+				min-width: 150px;
+				padding: .4rem 1rem;
+			}
+			ul.tblEdit-dialog li:hover {
+				cursor: pointer;
+				background-color: rgba(0,0,0,.1);
+			}
+/*IMPORTANT STYLE*/
+	/*PADDING & MARGIN*/
+		.m1 { margin: .75rem !important; } .m2 { margin: 1.25rem !important; } .m3 { margin: 1.75rem !important; } .m4 { margin: 2.25rem !important; } .m5 { margin: 2.75rem !important; }
+		.m-t1 { margin-top: .75rem !important; } .m-t2 { margin-top: 1.25rem !important; } .m-t3 { margin-top: 1.75rem !important; } .m-t4 { margin-top: 2.25rem !important; } .m-t5 { margin-top: 2.75rem !important; }
+		.m-r1 { margin-right: .75rem !important; } .m-r2 { margin-right: 1.25rem !important; } .m-r3 { margin-right: 1.75rem !important; } .m-r4 { margin-right: 2.25rem !important; } .m-r5 { margin: 2.75rem !important; }
+		.m-b1 { margin-bottom: .75rem !important; } .m-b2 { margin-bottom: 1.25rem !important; } .m-b3 { margin-bottom: 1.75rem !important; } .m-b4 { margin-bottom: 2.25rem !important; } .m-b5 { margin-bottom: 2.75rem !important; }
+		.m-l1 { margin-left: .75rem !important; } .m-l2 { margin-left: 1.25rem !important; } .m-l3 { margin-left: 1.75rem !important; } .m-l4 { margin-left: 2.25rem !important; } .m-l5 { margin-left: 2.75rem !important; }
+		.p1 { padding: .75rem !important; } .p2 { padding: 1.25rem !important; } .p3 { padding: 1.75rem !important; } .p4 { padding: 2.25rem !important; } .p5 { padding: 2.75rem !important; }
+		.p-t1 { padding-top: .75rem !important; } .p-t2 { padding-top: 1.25rem !important; } .p-t3 { padding-top: 1.75rem !important; } .p-t4 { padding-top: 2.25rem !important; } .p-t5 { padding-top: 2.75rem !important; }
+		.p-r1 { padding-right: .75rem !important; } .p-r2 { padding-right: 1.25rem !important; } .p-r3 { padding-right: 1.75rem !important; } .p-r4 { padding-right: 2.25rem !important; } .p-r5 { padding: 2.75rem !important; }
+		.p-b1 { padding-bottom: .75rem !important; } .p-b2 { padding-bottom: 1.25rem !important; } .p-b3 { padding-bottom: 1.75rem !important; } .p-b4 { padding-bottom: 2.25rem !important; } .p-b5 { padding-bottom: 2.75rem !important; }
+		.p-l1 { padding-left: .75rem !important; } .p-l2 { padding-left: 1.25rem !important; } .p-l3 { padding-left: 1.75rem !important; } .p-l4 { padding-left: 2.25rem !important; } .p-l5 { padding-left: 2.75rem !important; }
+/*OTHERS CUSTOM*/
+	div.code {
+		overflow: auto;
+		margin: .5rem;
+		max-width: 100%;
+		max-height: 60vh;
+		padding: 1.5rem 0;
+		white-space: nowrap;
+		font-family: monospace;
+		color: #ffeb00;
+		background-color: rgba(0,0,0,.8);
+		border-radius: 10px;
+	}
+	div.code * {
+		font-family: monospace;
+	}
+	div.code .row {
+		display: block;
+		padding: .1rem 1.5rem;
+		user-select: all;
+	}
+	div.code .row:hover {
+		background-color: rgba(255,255,255,.1);
+	}
+	details.Epc-custom {}
+	details.Epc-custom summary {}
+	details.Epc-custom:not(summary) {}
+/*================= default Epic CSS Device Resolution 1366 x 768px =================*/
+/*================= default Epic CSS Device Resolution 1366 x 768px =================*/
+/*================= default Epic CSS Device Resolution 1366 x 768px =================*/
+
+@media only screen and (max-width: 319px){
+	p {
+		margin: .5rem 0;
+		line-height: 1.2rem;
+		font-size: .85rem;
+	}
+	/*================== TABLE ====================*/
+		caption {
+			margin: 0 .5rem;
+		}
+	/*SECTION*/
+		section[data-secname] {
+			padding-top: calc(40px + 1.5rem);
+		}
+		section[data-secname]:before {
+			left: 20px;
+		}
+		section.secname-r[data-secname]:before {
+			right: 20px;
+			left: unset;
+		}
+	/*OTHERS*/ 
+
+}
+@media only screen and (min-width: 320px) and (max-width: 479px){
+
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+}
