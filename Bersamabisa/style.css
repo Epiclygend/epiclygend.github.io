@@ -1,0 +1,33 @@
+:root {
+	/*COLOR VARIABLE*/
+		/*COLOR BY MATERIAL.IO*/
+		--primary-bg: #FFF;
+		--primary-content: rgba(0,0,0,.8);
+		--primary-light: #484848;
+		--primary-dark: #000;
+		--secondary-bg: #10355B;
+		--secondary-content: #FFF;
+		--secondary-light: #7a7cff;
+		--secondary-dark: #0026ca;
+		--secondary-hover: #43688E;
+		--tertiary-bg: #ff1744;
+		--tertiary-content: #fff;
+		--tertiary-light: #ff616f;
+		--tertiary-dark: #c4001d;
+		--quartenary-bg: #00e676;
+		--quartenary-content: #fff;
+		--quartenary-light: #66ffa6;
+		--quartenary-dark: #00b248;
+		--current-bg-color: var(--primary-bg);
+		--current-content-color: var(--primary-content);
+		--current-light-color: var(--primary-light);
+		--current-dark-color: var(--primary-dark);
+		color: var(--current-content-color);
+}
+header.img-head img {
+	object-position: 50% 30%;
+}
+.bersamabisa {
+	font-family: 'Futura Md BT', sans-serif !important;
+	font-weight: bolder !important;
+}
