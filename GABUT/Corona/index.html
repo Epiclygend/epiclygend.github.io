@@ -20,23 +20,23 @@
     </h1>
     <div class="card data">
         <h2>Total Kasus</h2>
-        <span id="cases"></span>
+        <span id="cases">0</span>
     </div>
     <div class="card data">
         <h2>Kasus yang berlangsung</h2>
-        <span id="active"></span>
+        <span id="active">0</span>
     </div>
     <div class="card data">
         <h2>Total Sembuh</h2>
-        <span id="recovered"></span>
+        <span id="recovered">0</span>
     </div>
     <div class="card data">
         <h2>Kasus per hari</h2>
-        <span id="perday"></span>
+        <span id="perday">0</span>
     </div>
     <div class="card data">
         <h2>Total meninggal</h2>
-        <span id="death"></span>
+        <span id="death">0</span>
     </div>
     <div class="card data">
         <h2>Region</h2>
@@ -47,9 +47,9 @@
 <script src="../lib/anime.min.js"></script>
 <script>
     let
-        datas, info, total_cases, total_recovered, total_deaths, total_new_cases_today, total_active_cases,
+        datas, info, total_cases, total_recovered, total_deaths, total_new_cases_today, total_active_cases, hmm = [],
         srcEl = document.getElementById('data-source'),
-        datEls = document.querySelectorAll('.card.data span'),
+        datEls = document.querySelectorAll('.card.data span:not(#region)'),
         load = anime.timeline({
             targets: '#loader',
             duration: 2000,
@@ -62,12 +62,6 @@
             ]
         })
     document.addEventListener('DOMContentLoaded', async () => {
-        // datas = await fetch('https://thevirustracker.com/free-api?countryTimeline=ID')
-        //             .then(r => r.json())
-        //             .then(r => {
-        //                 load.seek(load.duration)
-        //                 load.pause()
-        //             })
         datas = await fetch('https://thevirustracker.com/free-api?countryTotal=ID')
                     .then(r => r.json())
                     .then(r => {
@@ -77,19 +71,18 @@
                     })
         srcEl.href = info.source
         srcEl.textContent += info.source
-        // anime({
-        //     targets: datEls,
-        //     update: () => {
-                
-        //     },
-        //     easing: 'linear'
-        // })
-        document.getElementById('cases').textContent = total_cases
-        document.getElementById('active').textContent = total_active_cases
-        document.getElementById('recovered').textContent = total_recovered
-        document.getElementById('perday').textContent = total_new_cases_today
-        document.getElementById('death').textContent = total_deaths
+        document.getElementById('cases').dataset.data = total_cases
+        document.getElementById('active').dataset.data = total_active_cases
+        document.getElementById('recovered').dataset.data = total_recovered
+        document.getElementById('perday').dataset.data = total_new_cases_today
+        document.getElementById('death').dataset.data = total_deaths
         document.getElementById('region').textContent = info.title
+        anime({
+            targets: datEls,
+            textContent: el => [el.textContent,el.dataset.data],
+            round: 1,
+            easing: 'linear'
+        })
     })
 </script>
 </html>
