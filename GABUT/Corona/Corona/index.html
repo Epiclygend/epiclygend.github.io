@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Compiled/corona.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+    <title>Corona Tracker - Epic WebDev</title>
+</head>
+<body>
+    <div id="loader"></div>
+    <h1 class="headline">
+        Corona Virus Tracker
+        <span class="subtitle">
+            <a style="
+                color: #000;
+                text-decoration: none;
+            " href="https://github.com/Epiclygend" target="_blank">Epic WebDev</a>
+            (<a href="https://www.instagram.com/alwan.nuha/" target="_blank">@alwan.nuha</a>)
+        </span>
+    </h1>
+    <span id="refresh" class="btn-round material-icons neuRev" title="Refresh Data"
+        style="
+            justify-self: end;
+            align-self: baseline;">update</span>
+    <div class="card data">
+        <h2>Total Terinfeksi</h2>
+        <span id="cases">0</span>
+    </div>
+    <div class="card data">
+        <h2>Kasus yang berlangsung</h2>
+        <span id="active">0</span>
+    </div>
+    <div class="card data">
+        <h2>Total Sembuh</h2>
+        <span id="recovered">0</span>
+    </div>
+    <div class="card data">
+        <h2>Total meninggal</h2>
+        <span id="death">0</span>
+    </div>
+    <div class="card data">
+        <h2>Location</h2>
+        <span id="location">
+            <input list="countryList" value="Indonesia">
+            <datalist id="countryList">
+            </datalist>
+            <button class="btn"></button>
+        </span>
+    </div>
+    <span style="
+        grid-column: 1;
+        height: 15vh;
+        ">Last Update: <span id="updates"></span></span>
+    <span id="source"><b>source: </b><a href="https://github.com/BlankerL/DXY-COVID-19-Data" target="_blank">https://github.com/BlankerL/DXY-COVID-19-Data</a></span>
+    <article>
+        <h1 class="headline">Opini</h1>
+        <div class="article">
+            <h2>Sedikit Tentang Pandemi</h2>
+            <span class="subtitle">By Nia Haji (<a href="http://niahaji.blogspot.com/" target="_blank">http://niahaji.blogspot.com/</a>)</span>
+            <div class="content">
+Berawal dari tugas kuliah bisnis online untuk kenalan dengan orang-orang di grup WA yang aku punya. Lalu chat teman-teman grup SMAIT yang kuliah di UNS. Baru juga chat 5 orang, ketemulah sama adik kelas yang ternyata web developer.
+                
+Si web developer ini bikin story di WA menawarkan pada khalayak, siapa yang mau ngisi konten untuk webnya. Nulis apa aja soal pandemi yang sedang terjadi. Sebagai blogger tidak kenamaan, ya aku mau dong ikut ngisi konten. Kalau tulisan ini benar-benar di muat di web adik kelasku si web developer, berarti ini tulisan pertamaku yang dimuat disitus diluar blogku. Wow seneng lol.
+                
+Soal pandemi, jujur, takut banget akutu. Tapi kalau baca-baca tentang wabah di masa lalu dan nyatanya penghuni bumi kala itu mampu melalui, kuambil kesimpulan yang ngeyem-ngeyem ati; berarti penghuni bumi saat ini mampu melalui, DENGAN LEBIH BAIK.
+                
+Yang jaman dulu semua serba terbatas aja mampu, kenapa sekarang yang serba ada, serba canggih, malah tidak mampu. Logikanya gitu, ya nggak?
+                
+Lagi pula, manusia hanya boneka. Lakonnya Sang Sutradara dan semua alur cerita tertulis dengan seksama. Kenapa pula panik memikirkan kelanjutan bumi? Lakukan saja yang bisa diusaha, kenapa capek mikir hasil akhir yang bukan wewenang manusia.
+                
+Barangkali ini hukuman seperti yang selalu diulang tulis dalam Kitab. Kalau sutradara merasa perilaku lakonnya diluar batas, tidak manut dengan aturan-aturan, tidak manut dengan perintah pemberi peran, wajar kalau sutradaranya murka. Sang Kuasa kalau sudah murka lakonnya cuma bisa apa?
+                
+Ingat, kita semua lakon. Boneka yang tidak bisa berkehendak semau karsa. Semua teratur, semua tertulis. Hanya karena saat ini merasa punya segala, bukan berarti adalah sesiapa. Kita sama-sama tidak tahu hari esok akan seperti apa. Tundukkan kepala yang mendongak congkak. Tugas kita hanya taat.
+                
+Ingat, kita ini cuma siapa. Kalau Pemilik Segala murka, habislah semua.
+                
+Baca Kitab dan ambil pelajaran dari sana. Betapa hukumanNya mengerikan, betapa hukumanNya menyengsarakan.
+                
+Apa kalian akan menghujatku karena mengatakan pandemi ini hukuman? Aku sih B yaa kalau kalian menghujat. Wkwk. Coba deh baca-baca Kitab. Allah hanya akan mengirimkan musibah yang mendunia ketika penghuninya berperilaku melampaui batas.
+                
+Kecuali aku bilang bahwa pandemi ini hukuman ketika baru mewabah di Wuhan. Barulah itu tidak manusiawi. Aku bilang bahwa pandemi ini hukuman ketika hampir seluruh bumi terserang, ketika nyawaku sendiri terancaman, means kemungkinan besar aku akan kena hukuman.
+                
+Diluar teori konspirasi yang saling tuduh antara X, Y, dan Z soal kemunculan virus ini. Entah persebarannya dari hewan, atau kebocoran laboratorium di Wuhan, bahkan yang paling konspiratif; sengaja disebar oleh pihak berkepentingan. Satu hal yang hampir mungkin pasti, tidak ada yang tahu kalau dampaknya luar biasa. Bahkan, kupikir, kalau teori konspirasi soal menyebar virus ini dengan sengaja adalah benar, barangkali si penyebar tidak pernah tahu kalau akan bikin dunia segeger ini.
+                
+Ah, terlepas dari itu semua, sekali lagi, dunia punya penulis cerita. Dan Sang Sutradara, punya tangan kuasa diluar batas manusia mampu melawan. Barangkali memang begini yang diingini pemilik bumi. Lakukan saja semaksimal yang manusia bisa untuk saling melindungi.
+
+Tidak bermaksud menyudutkan sesiapa. Aku bukan bidadari yang tidak punya salah diri. Sedang instropeksi dan mengajak kalian melakukan hal yang sama. Barangkali kita lari terlalu jauh, barangkali kita pergi terlalu lama. Ya, barangkali pandemi ini disebabkan ulah kita yang hidup terlalu congkak di atas bumi. Sementara, sejatinya kita tidak punya hak apa-apa atasnya.
+
+Milikmu hanya amalan baikmu. Amal yang memberatkan neraca sebelah kananmu. Selain itu, jangan pernah diaku.
+
+Mari sama-sama kembali. Menunduk lebih rendah, berjalan di belakang tuntunan, berdoa agar murkaNya mereda.
+
+Hal teknis lainnya, KALAU KAMU PANIK JANGAN BIKIN ORANG LAIN IKUT PANIK. Stop sebar berita hoax. Nggak usah dibaca artikel yang cuma bikin panik. Ikuti perkembangan pandemi ini dari sumber terpercaya. Jangan lupa bersihkan tangan setelah pegang benda apapun di tempat umum, susah cari air ya pakai hand sanitizer. Pakai masker seadanya, nggak usah diada-ada. Asal bisa buat nutupi daerah sekitar hidung dan mulut. Pakai kacamata kalau perlu untuk menjaga mata. Makan makanan bergizi, olahraga teratur, istirahat cukup. Wow, cem aku udah bisa lakuin itu semua. Belumlah! Wkwk.
+
+Takut boleh. Malah aku meminta kalian untuk takut biar kita sama-sama mau #dirumahaja. Yang penting jangan panik.
+
+Tentang #dirumahaja, kenapa rasa-rasanya banyak orang terlalu santai sih sampai terang-terangan kluyuran untuk hal tidak penting? Bahkan pergi untuk hal penting saja aku takut hloo. Kenapa kalian pemberani sekali? Banyak yang ingin #dirumahaja tapi mereka wajib pergi bekerja melayani sesama. Kenapa yang tidak punya urgensi pergi malah kerjaannya pergi-pergi?
+
+Anjuran minum wedang jahe dan lemon saja kalian percaya dan bersedia rutin mengkonsumsi meskipun sekarang harganya mahal. Kenapa anjuran #dirumahaja malah dipantangi? Bukan sekedar pantang, tapi diacuhkan.
+
+Bisa jadi karena ketimpangan kebijakan sih ya. Toko-toko, pasar, pelayanan umum, bahkan destinasi wisata di kota sebelah masih buka. Ya gimana yang nggak punya kerjaan bersedia #dirumahaja? Gimana bakul-bakul bersedia libur jualan? Gimana ibu-ibu beranak satu bersedia rehat ngampiri playground?
+
+Baiklah, karena aku bukan pembuat kebijakan, kasih saran kepada pembuat kebijakan pun nggak akan didengarkan, maka aku disini melakukan semampu yang aku bisa. Dan mengajak kalian YANG BERSEDIA untuk melakukannya sama-sama. Yang nggak bersedia ya nggak papa. Nggak ada paksaan kok. Aku mah siapa, bukan otoritasku memaksa ini itu.
+
+Beb, mati itu takdir. Kitab yang menulis, bukan aku yang mengarang. Tapi Umar RA bilang, menggiring hewan ternak ke ladang tandus atau subur, itu pilihan. Ayolah, giring hewan ternakmu ke ladang subur. Maksudku, pilih jalan terbaik untuk menanggulangi penyebaran virus yang cepat ini. Tidak perlu menunggu negara jadi zombi baru kita kunci pintu.
+
+Siapkan kemungkinan terburuk. Hanya karena ikut ngaji lalu merasa golongan kanan dan bebas dari hukuman, lantas leluasa bepergian tanpa rasa khawatir terserang virus mematikan. Siapa yang jamin kita golongan kanan hanya karena ikut pengajian? Sadarlah, betapa di masa lalu mereka yang mengaku orang kanan adalah mereka yang pertama terkena hukuman! Ini bukan sekedar soal kesehatanmu, tapi kesehatan orang-orang yang kamu cintai; istrimu, suamimu, anakmu, orang tuamu, saudaramu, teman-temanmu. Mari kerja sama-sama. Mari memilih takut lalu #dirumah aja agar kita mampu #ratakangrafiknya.
+
+Selamat menghadapi epidemic, para penghuni bumi.
+
+Anw, kalau dunia dirasa semencekam ini, mereka yang tidak percaya bahwa alam semesta punya pencipta, apakah akan ikut berdoa? Lol.
+
+Ps: tidak bermaksud menghakimi mereka yang terserang dan atau meninggal karena pandemi ini adalah golongan kiri lalu kena hukuman gitu ya. Layaknya hukuman lainnya, salah segelintir orang bisa membuat semua populasi dalam kelompok kena hukuman. Poin yang ingin aku sampaikan adalah mari berbenah dan menjaga diri masing-masing sambil tetap berdoa memohon perlindungan.
+            </div>
+        </div>
+    </article>
+</body>
+<script src="../lib/anime.min.js"></script>
+<script>
+    let
+        datas, data, countriesList,
+        selectedEl = document.querySelector('input[list="countryList"]'),
+        currSelected = selectedEl.value.toUpperCase(),
+        refreshEl = document.getElementById('refresh'),
+        datEls   = document.querySelectorAll('.card.data > span:not(#location)'),
+        updateEl = document.getElementById('updates'),
+        casesEl  = document.getElementById('cases'),
+        currentEl = document.getElementById('active'),
+        recoveredEl = document.getElementById('recovered'),
+        deathEl  = document.getElementById('death'),
+        locEl    = document.getElementById('region'),
+        load     = anime.timeline({
+                    targets: '#loader',
+                    duration: 2000,
+                    easing: 'cubicBezier(0.150, 0.680, 0.350, 1)',
+                    loop: true,
+                    autoplay: false
+                }).add({
+                    keyframes: [
+                        { scaleX: 0 },
+                        { scaleX: 1 }
+                    ]
+                }),
+        update = async (loc,refresh = false) => {
+            document.body.style.cursor = 'progress'
+            load.play()
+            datas = refresh ? undefined:datas
+            datas = datas ? datas : await fetch('https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYArea.json')
+                .then(r => r.json())
+                .then(r => r.results)
+                .catch(e => e)
+                .finally(() => {
+                    load.seek(load.duration)
+                    load.pause()
+                })
+            data = datas.filter(i => (i.countryEnglishName ? i.countryEnglishName.toUpperCase() : i.countryEnglishName) && (i.provinceEnglishName ? i.provinceEnglishName.toUpperCase() : i.provinceEnglishName) === loc)
+            if (data.length === 0) {
+                alert("Didn't find location data, Please input Again!")
+                selectedEl.value = currSelected
+                selectedEl.focus()
+            }
+            else {
+                let [{confirmedCount = 0, currentConfirmedCount = 0, curedCount = 0, deadCount = 0, updateTime = new Date()}] = data
+                updateEl.textContent = (new Date(updateTime)).toUTCString()
+                casesEl.dataset.data = confirmedCount
+                currentEl.dataset.data = currentConfirmedCount
+                recoveredEl.dataset.data = curedCount
+                deathEl.dataset.data = deadCount
+                currSelected = loc
+                anime({
+                    targets: datEls,
+                    textContent: el => [el.textContent, el.dataset.data],
+                    round: 1,
+                    easing: 'linear'
+                })
+                countriesList = refresh ? undefined:countriesList
+                countriesList = countriesList ? countriesList:setCountryList(...countryList())
+            }
+            load.seek(load.duration)
+            load.pause()
+            document.body.style.cursor = 'unset'
+        },
+        countryList = () => datas.filter(i => i.countryEnglishName == i.provinceEnglishName).reduce((list, { countryEnglishName }) => [...list, countryEnglishName], [])
+    function setCountryList(...countriesName) {
+        countriesList = countriesName.reduce((countriesEl, country) => {
+                let el = document.createElement('option')
+                el.value = el.textContent = country
+                return [...countriesEl, el]
+            },[])
+        document.querySelector('#countryList').append(...countriesList)
+        return countriesList
+    }
+    document.addEventListener('DOMContentLoaded', async () => {
+        let
+            btnEdit = document.querySelector('#location .btn'),
+            editEl = document.createElement('SPAN'),
+            doneEl = document.createElement('SPAN'),
+            toggleEdit = yes => {
+                if (yes) {
+                    doneEl.remove()
+                    btnEdit.append(editEl)
+                    btnEdit.style.backgroundColor = 'transparent'
+                } else {
+                    editEl.remove()
+                    btnEdit.append(doneEl)
+                    btnEdit.style.backgroundColor = '#fff'
+                }
+            }
+        editEl.classList.add('material-icons')
+        editEl.textContent = 'edit'
+        doneEl.classList.add('material-icons')
+        doneEl.textContent = 'done'
+        doneEl.style.color = 'lime'
+        editEl.addEventListener('click', () => selectedEl.focus())
+        doneEl.addEventListener('click', () => {
+            update(selectedEl.value.toUpperCase())
+            toggleEdit(1)
+        })
+        toggleEdit(1)
+        update(currSelected)
+        selectedEl.addEventListener('input',() => {
+            if (currSelected != selectedEl.value.toUpperCase()) toggleEdit(0)
+            else toggleEdit(1)
+        })
+        refreshEl.addEventListener('click', () => update(currSelected,true))
+    })
+</script>
+</html>
