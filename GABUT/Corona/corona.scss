@@ -43,24 +43,6 @@ $primary-color: #fff;
     @include poppins(300,auto);
     margin: 0;
     box-sizing: border-box;
-    &[contenteditable] {
-        cursor: text;
-        position: relative;
-        &:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: .15em;
-            background-color: #66fa;
-            border-radius: 5px;
-        }
-        &:focus:after {
-            background-color: #8daffadd;
-            box-shadow: 0 0 10px #a1c3fa;
-        }
-    }
 }
 body {
     position: relative;
@@ -166,8 +148,13 @@ a {
         background-color: #ff0;
     }
 }
+input {
+    border: none;
+    background-color: transparent;
+}
 .card {
     @include neumorphRev();
+    position: relative;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -183,13 +170,25 @@ a {
             justify-content: center;
             align-items: center;
             & span {
-                font-size: 3rem;
+                font-size: 2rem;
             }
-            & img {
-                width: 2rem;
-                height: 2rem;
+            .btn {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background-color: transparent;
+                background: transparent;
+                .material-icons {
+                    padding: .3rem;
+                    background-color: transparent;
+                }
             }
         }
+    }
+    input {
+        @include poppins(500, 2.5rem);
+        position: relative;
+        width: inherit;
     }
 }
 .btn {

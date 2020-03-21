@@ -43,7 +43,9 @@
     <div class="card data">
         <h2>Location</h2>
         <span id="location">
-            <span contenteditable="">Indonesia</span>
+            <input list="countryList" value="Indonesia">
+            <datalist id="countryList">
+            </datalist>
             <button class="btn"></button>
         </span>
     </div>
@@ -56,7 +58,7 @@
         <h1 class="headline">Opini</h1>
         <div class="article">
             <h2>Sedikit Tentang Pandemi</h2>
-            <span class="subtitle">By Anonymous</span>
+            <span class="subtitle">By Nia Haji (<a href="http://niahaji.blogspot.com/" target="_blank">http://niahaji.blogspot.com/</a>)</span>
             <div class="content">
 Berawal dari tugas kuliah bisnis online untuk kenalan dengan orang-orang di grup WA yang aku punya. Lalu chat teman-teman grup SMAIT yang kuliah di UNS. Baru juga chat 5 orang, ketemulah sama adik kelas yang ternyata web developer.
                 
@@ -118,9 +120,9 @@ Ps: tidak bermaksud menghakimi mereka yang terserang dan atau meninggal karena p
 <script src="../lib/anime.min.js"></script>
 <script>
     let
-        datas, data, any,
-        selectedEl = document.querySelector('#location span[contenteditable]'),
-        currSelected = selectedEl.textContent,
+        datas, data, countriesList,
+        selectedEl = document.querySelector('input[list="countryList"]'),
+        currSelected = selectedEl.value.toUpperCase(),
         refreshEl = document.getElementById('refresh'),
         datEls   = document.querySelectorAll('.card.data > span:not(#location)'),
         updateEl = document.getElementById('updates'),
@@ -153,24 +155,43 @@ Ps: tidak bermaksud menghakimi mereka yang terserang dan atau meninggal karena p
                     load.seek(load.duration)
                     load.pause()
                 })
-            data = datas.filter(i => i.countryEnglishName === loc)
-            let [{ confirmedCount, currentConfirmedCount, curedCount, deadCount, updateTime }, ...any] = data
-            updateEl.textContent = new Date(updateTime)
-            casesEl.dataset.data = confirmedCount
-            currentEl.dataset.data = currentConfirmedCount
-            recoveredEl.dataset.data = curedCount
-            deathEl.dataset.data = deadCount
-            currSelected = selectedEl.textContent
-            anime({
-                targets: datEls,
-                textContent: el => [0, el.dataset.data],
-                round: 1,
-                easing: 'linear'
-            })
+            data = datas.filter(i => (i.countryEnglishName ? i.countryEnglishName.toUpperCase() : i.countryEnglishName) && (i.provinceEnglishName ? i.provinceEnglishName.toUpperCase() : i.provinceEnglishName) === loc)
+            if (data.length === 0) {
+                alert("Didn't find location data, Please input Again!")
+                selectedEl.value = currSelected
+                selectedEl.focus()
+            }
+            else {
+                let [{confirmedCount = 0, currentConfirmedCount = 0, curedCount = 0, deadCount = 0, updateTime = new Date()}] = data
+                updateEl.textContent = (new Date(updateTime)).toUTCString()
+                casesEl.dataset.data = confirmedCount
+                currentEl.dataset.data = currentConfirmedCount
+                recoveredEl.dataset.data = curedCount
+                deathEl.dataset.data = deadCount
+                currSelected = loc
+                anime({
+                    targets: datEls,
+                    textContent: el => [el.textContent, el.dataset.data],
+                    round: 1,
+                    easing: 'linear'
+                })
+                countriesList = refresh ? undefined:countriesList
+                countriesList = countriesList ? countriesList:setCountryList(...countryList())
+            }
             load.seek(load.duration)
             load.pause()
             document.body.style.cursor = 'unset'
-        }
+        },
+        countryList = () => datas.filter(i => i.countryEnglishName == i.provinceEnglishName).reduce((list, { countryEnglishName }) => [...list, countryEnglishName], [])
+    function setCountryList(...countriesName) {
+        countriesList = countriesName.reduce((countriesEl, country) => {
+                let el = document.createElement('option')
+                el.value = el.textContent = country
+                return [...countriesEl, el]
+            },[])
+        document.querySelector('#countryList').append(...countriesList)
+        return countriesList
+    }
     document.addEventListener('DOMContentLoaded', async () => {
         let
             btnEdit = document.querySelector('#location .btn'),
@@ -180,9 +201,11 @@ Ps: tidak bermaksud menghakimi mereka yang terserang dan atau meninggal karena p
                 if (yes) {
                     doneEl.remove()
                     btnEdit.append(editEl)
+                    btnEdit.style.backgroundColor = 'transparent'
                 } else {
                     editEl.remove()
                     btnEdit.append(doneEl)
+                    btnEdit.style.backgroundColor = '#fff'
                 }
             }
         editEl.classList.add('material-icons')
@@ -192,13 +215,13 @@ Ps: tidak bermaksud menghakimi mereka yang terserang dan atau meninggal karena p
         doneEl.style.color = 'lime'
         editEl.addEventListener('click', () => selectedEl.focus())
         doneEl.addEventListener('click', () => {
-            update(selectedEl.textContent)
+            update(selectedEl.value.toUpperCase())
             toggleEdit(1)
         })
         toggleEdit(1)
-        update(selectedEl.textContent)
+        update(currSelected)
         selectedEl.addEventListener('input',() => {
-            if (currSelected != selectedEl.textContent) toggleEdit(0)
+            if (currSelected != selectedEl.value.toUpperCase()) toggleEdit(0)
             else toggleEdit(1)
         })
         refreshEl.addEventListener('click', () => update(currSelected,true))
